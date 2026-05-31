@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KothaFinder Nepal — Find verified rooms and flats for rent across Kathmandu, Lalitpur, Bhaktapur, Pokhara, and Chitwan. Zero broker fees, direct owner-to-tenant rentals.">
+  <meta name="keywords" content="room rent Nepal, flat rent Kathmandu, kotha finder, room finder Nepal, apartment Lalitpur, Pokhara room">
+  <meta name="author" content="KothaFinder Nepal">
+  <meta name="theme-color" content="#DC2626">
+  <title>KothaFinder Nepal — Find Your Perfect Room or Flat</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================
+       SKIP LINK — Accessibility
+  ============================================ -->
+  <a href="#main-content" class="skip-link" id="skip-link">Skip to main content</a>
+
+  <!-- ============================================
+       HEADER / NAVIGATION
+  ============================================ -->
+  <header class="site-header" id="site-header" role="banner">
+    <div class="container header-inner">
+      <a href="#" class="logo" id="logo-link" aria-label="KothaFinder Nepal Home">
+        <img src="assets/logo.png" alt="" class="logo-img" width="48" height="48">
+        <div class="logo-brand">
+          <span class="logo-brand-name"><span class="brand-kotha">Kotha</span><span class="brand-finder">Finder</span> <span class="brand-nepal">Nepal</span></span>
+          <span class="logo-brand-tagline">Unlock Your Ideal Home</span>
+        </div>
+      </a>
+
+      <!-- Mobile hamburger toggle -->
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <nav class="primary-nav" id="primary-nav" role="navigation" aria-label="Primary navigation">
+        <ul class="nav-list">
+          <li><a href="#hero" class="nav-link active" data-nav="hero">Home</a></li>
+          <li><a href="#listings" class="nav-link" data-nav="listings">Browse Rooms</a></li>
+          <li><a href="#about" class="nav-link" data-nav="about">About</a></li>
+          <li><a href="#contact" class="nav-link" data-nav="contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="btn btn-admin" id="admin-portal-btn" aria-label="Open Admin Portal">
+        <svg class="admin-btn-icon-lock" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <svg class="admin-btn-icon-grid" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+        <span class="admin-btn-text">Admin Portal</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============================================
+       MAIN CONTENT
+  ============================================ -->
+  <main id="main-content" tabindex="-1" style="outline: none;">
+
+    <!-- ======== HERO SECTION ======== -->
+    <section class="hero" id="hero" aria-labelledby="hero-heading">
+      <div class="hero-bg">
+        <img src="assets/hero-bg.png" alt="" class="hero-bg-img" loading="eager" fetchpriority="high">
+        <div class="hero-overlay"></div>
+      </div>
+      <div class="container hero-content">
+        <h1 id="hero-heading" class="hero-title">
+          Find Your Perfect <span class="text-accent">Room</span> or <span class="text-accent">Flat</span> Across Nepal
+        </h1>
+        <p class="hero-subtitle">
+          Browse verified rooms and apartments in Kathmandu, Lalitpur, Bhaktapur, Pokhara and Chitwan.
+        </p>
+        <div class="hero-cta-group">
+          <a href="#listings" class="btn btn-primary btn-lg hero-cta" id="hero-cta-btn">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            Browse Rooms Now
+          </a>
+          <button class="btn btn-hero-secondary" id="hero-secondary-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            List Your Room
+          </button>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <span class="hero-stat-number" id="counter-listings">0<span class="hero-stat-suffix">+</span></span>
+            <span class="hero-stat-label">Verified Listings</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" id="counter-cities">0<span class="hero-stat-suffix">+</span></span>
+            <span class="hero-stat-label">Cities Covered</span>
+          </div>
+          <div class="hero-stat">
+            <span class="hero-stat-number" id="counter-broker">0<span class="hero-stat-suffix">%</span></span>
+            <span class="hero-stat-label">Broker Commission</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== SEARCH & FILTER BAR ======== -->
+    <section class="search-section" id="search-section" aria-label="Search and filter rooms">
+      <div class="container">
+        <div class="search-bar">
+          <div class="search-input-wrapper">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input type="search" id="search-input" class="search-field" placeholder="Search by title, description, or city..." aria-label="Search listings" autocomplete="off">
+          </div>
+          <div class="filter-wrapper">
+            <label for="city-filter" class="sr-only">Filter by city</label>
+            <select id="city-filter" class="city-select" aria-label="Filter by city">
+              <option value="">All Cities</option>
+              <option value="Kathmandu">Kathmandu</option>
+              <option value="Lalitpur">Lalitpur</option>
+              <option value="Bhaktapur">Bhaktapur</option>
+              <option value="Pokhara">Pokhara</option>
+              <option value="Chitwan">Chitwan</option>
+            </select>
+          </div>
+        </div>
+        <p class="results-count" id="results-count" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <!-- ======== ROOM LISTINGS GRID ======== -->
+    <section class="listings-section" id="listings" aria-labelledby="listings-heading">
+      <div class="container">
+        <h2 id="listings-heading" class="section-title reveal">Available Rooms &amp; Flats</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Handpicked, verified properties across Nepal's top cities</p>
+        <ul class="listings-grid" id="listings-grid" role="list">
+          <!-- Listings rendered dynamically by script.js -->
+        </ul>
+        <p class="no-results" id="no-results" hidden>
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/><line x1="8" y1="8" x2="14" y2="14"/><line x1="14" y1="8" x2="8" y2="14"/></svg>
+          <span>No rooms match your search. Try different keywords or city.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ======== ABOUT SECTION ======== -->
+    <section class="about-section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading" class="section-title reveal">Why Choose Us?</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Helping people find rooms and flats across Nepal with trust and ease</p>
+        <div class="about-grid">
+          <article class="about-card reveal" id="about-card-1">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Zero Brokerage</h3>
+            <p>Avoid expensive middlemen and save thousands in commissions. Rent rooms and flats at original prices directly.</p>
+          </article>
+          <article class="about-card reveal reveal-delay-1" id="about-card-2">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+            </div>
+            <h3>Verified Listings</h3>
+            <p>Every single property listing is manually verified by our team. Authentic photos, accurate descriptions, and true rental terms.</p>
+          </article>
+          <article class="about-card reveal reveal-delay-2" id="about-card-3">
+            <div class="about-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Direct Owner Contact</h3>
+            <p>Connect directly with property owners via phone or email. Quick rental agreements, fast communication, and clear terms.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== CONTACT SECTION ======== -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <h2 id="contact-heading" class="section-title reveal">Get In Touch</h2>
+        <p class="section-subtitle reveal reveal-delay-1">Have questions or feedback? We'd love to hear from you.</p>
+        <div class="contact-grid">
+          <!-- Left Column: Contact Info Cards -->
+          <div class="contact-info reveal">
+            <article class="contact-info-card" aria-labelledby="info-card-heading">
+              <h3 id="info-card-heading">Contact Details</h3>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Email Address</h4>
+                  <p>support@kothafinder.com</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Phone Number</h4>
+                  <p>+977-9800000000</p>
+                </div>
+              </div>
+              
+              <div class="contact-info-item">
+                <div class="contact-info-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div class="contact-info-text">
+                  <h4>Support Hours</h4>
+                  <p>Sun – Fri: 9 AM – 6 PM</p>
+                </div>
+              </div>
+            </article>
+          </div>
+          
+          <!-- Right Column: Contact Form Wrapper -->
+          <div class="contact-form-wrapper reveal reveal-delay-1">
+            <form class="contact-form" id="contact-form" novalidate>
+              <div class="form-group">
+                <label for="contact-name" class="form-label">Full Name <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="contact-name" class="form-input" placeholder="Enter your full name" required aria-required="true" autocomplete="name">
+                <span class="form-error" id="contact-name-error" role="alert"></span>
+              </div>
+              <div class="form-group">
+                <label for="contact-email" class="form-label">Email Address <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" class="form-input" placeholder="Enter your email address" required aria-required="true" autocomplete="email">
+                <span class="form-error" id="contact-email-error" role="alert"></span>
+              </div>
+              <div class="form-group form-group-full">
+                <label for="contact-message" class="form-label">Message <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="contact-message" class="form-input form-textarea" placeholder="Write your message here..." required aria-required="true" rows="5"></textarea>
+                <span class="form-error" id="contact-message-error" role="alert"></span>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg" id="contact-submit-btn">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                Send Message
+              </button>
+            </form>
+            <div class="contact-success" id="contact-success" hidden role="status">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+              <h3>Message Sent Successfully!</h3>
+              <p>Thank you for reaching out. We will get back to you within 24 hours.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================
+       FOOTER
+  ============================================ -->
+  <footer class="site-footer" id="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <!-- Column 1: Brand Info -->
+      <div class="footer-brand">
+        <a href="#" class="logo" id="footer-logo-link" aria-label="KothaFinder Nepal Home" style="margin-bottom: var(--space-md); display: flex;">
+          <img src="assets/logo.png" alt="" class="logo-img" width="48" height="48" loading="lazy">
+          <div class="logo-brand">
+            <span class="logo-brand-name" style="color: white;">KothaFinder <span class="text-accent" style="color: #FCA5A5;">Nepal</span></span>
+            <span class="logo-brand-tagline" style="color: rgba(255, 255, 255, 0.55);">Unlock Your Ideal Home</span>
+          </div>
+        </a>
+        <p class="footer-tagline">Helping people find verified rooms and flats across Nepal. Hassle-free rentals with zero broker commissions.</p>
+        <div class="footer-social">
+          <a href="#" class="footer-social-link" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </a>
+          <a href="#" class="footer-social-link" aria-label="Twitter">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"/></svg>
+          </a>
+        </div>
+      </div>
+      
+      <!-- Column 2: Quick Links -->
+      <div class="footer-links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#listings">Browse Rooms</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#" id="footer-admin-link">Admin Portal</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 3: Cities -->
+      <div class="footer-links">
+        <h4>Cities</h4>
+        <ul>
+          <li><a href="#listings" data-city-link="Kathmandu">Kathmandu</a></li>
+          <li><a href="#listings" data-city-link="Lalitpur">Lalitpur</a></li>
+          <li><a href="#listings" data-city-link="Bhaktapur">Bhaktapur</a></li>
+          <li><a href="#listings" data-city-link="Pokhara">Pokhara</a></li>
+          <li><a href="#listings" data-city-link="Chitwan">Chitwan</a></li>
+        </ul>
+      </div>
+      
+      <!-- Column 4: Support -->
+      <div class="footer-links footer-contact">
+        <h4>Support</h4>
+        <ul>
+          <li class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <span>support@kothafinder.com</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+977-9800000000</span>
+          </li>
+          <li class="footer-contact-item">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>Sun – Fri<br>9 AM – 6 PM</span>
+          </li>
+        </ul>
+      </div>
+      
+      <!-- Bottom Footer -->
+      <div class="footer-bottom">
+        <p>&copy; 2026 KothaFinder Nepal. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================
+       ADMIN LOGIN MODAL
+  ============================================ -->
+  <div class="modal-overlay" id="login-modal" role="dialog" aria-modal="true" aria-labelledby="login-modal-title" hidden>
+    <div class="modal-content modal-login">
+      <button class="modal-close" id="login-modal-close" aria-label="Close login modal">&times;</button>
+      <div class="modal-header">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="modal-icon" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+        <h2 id="login-modal-title">Admin Login</h2>
+        <p>Enter your credentials to access the dashboard</p>
+      </div>
+      <form class="login-form" id="login-form" novalidate>
+        <div class="form-group">
+          <label for="login-username" class="form-label">Username</label>
+          <input type="text" id="login-username" class="form-input" placeholder="Enter username" required aria-required="true" autocomplete="username">
+          <span class="form-error" id="login-username-error" role="alert"></span>
+        </div>
+        <div class="form-group">
+          <label for="login-password" class="form-label">Password</label>
+          <input type="password" id="login-password" class="form-input" placeholder="Enter password" required aria-required="true" autocomplete="current-password">
+          <span class="form-error" id="login-password-error" role="alert"></span>
+        </div>
+        <div class="login-error" id="login-error" role="alert" hidden>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
+          <span>Invalid username or password. Please try again.</span>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="login-submit-btn">
+          <svg class="btn-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"/><polyline points="10 17 15 12 10 7"/><line x1="15" y1="12" x2="3" y2="12"/></svg>
+          <span class="btn-label">Sign In</span>
+          <span class="btn-spinner" hidden aria-hidden="true"></span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================
+       ADMIN DASHBOARD MODAL
+  ============================================ -->
+  <div class="modal-overlay" id="dashboard-modal" role="dialog" aria-modal="true" aria-labelledby="dashboard-modal-title" hidden>
+    <div class="modal-content modal-dashboard">
+      <!-- ---- Dashboard Header ---- -->
+      <div class="dashboard-header">
+        <h2 id="dashboard-modal-title">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Admin Dashboard
+        </h2>
+        <div class="dashboard-actions">
+          <button class="btn btn-outline btn-sm" id="dashboard-logout-btn" aria-label="Logout from admin dashboard">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+            Logout
+          </button>
+          <button class="modal-close" id="dashboard-modal-close" aria-label="Close dashboard modal">&times;</button>
+        </div>
+      </div>
+
+      <!-- ---- Statistics Cards ---- -->
+      <div class="dashboard-stats" id="dashboard-stats">
+        <div class="stat-card stat-card--total" id="stat-total">
+          <div class="stat-icon">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="stat-total-count">0</span>
+            <span class="stat-label">Active Listings</span>
+          </div>
+        </div>
+        <div class="stat-card stat-card--inquiries" id="stat-inquiries">
+          <div class="stat-icon" style="background: #FEE2E2; color: #DC2626;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="stat-inquiries-count">0</span>
+            <span class="stat-label">Customer Inquiries</span>
+          </div>
+        </div>
+        <div class="stat-card stat-card--hotspots" id="stat-hotspots">
+          <div class="stat-icon" style="background: #E0F2FE; color: #0284C7;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <div class="stat-info">
+            <span class="stat-number" id="stat-hotspots-ratio" style="font-size: 1rem; font-weight: 700; margin-top: 4px; color: var(--color-text);">Valley: 0 | Others: 0</span>
+            <span class="stat-label">Primary Hotspots</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- ---- Dashboard Tabs ---- -->
+      <div class="dashboard-tabs" id="dashboard-tabs" role="tablist">
+        <button class="dashboard-tab active" id="tab-listings" role="tab" aria-selected="true" aria-controls="panel-listings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Manage Listings
+        </button>
+        <button class="dashboard-tab" id="tab-inquiries" role="tab" aria-selected="false" aria-controls="panel-inquiries">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          User Inquiries
+          <span class="inquiries-count-badge" id="inquiries-count-badge" hidden>0</span>
+        </button>
+      </div>
+
+      <div class="dashboard-panels">
+        <!-- PANEL 1: Manage Listings -->
+        <div class="dashboard-panel active" id="panel-listings" role="tabpanel" aria-labelledby="tab-listings">
+          <div class="dashboard-body">
+            <!-- LEFT: Add Listing Form -->
+            <div class="dashboard-form-panel">
+              <h3 id="form-panel-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                <span>Add New Listing</span>
+              </h3>
+              <form class="listing-form" id="listing-form" novalidate>
+                <div class="form-group">
+                  <label for="listing-title" class="form-label">Title <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="listing-title" class="form-input" placeholder="e.g. Cozy Single Room in Thamel" required aria-required="true" minlength="5">
+                  <span class="form-error" id="listing-title-error" role="alert"></span>
+                </div>
+                <div class="form-row">
+                  <div class="form-group">
+                    <label for="listing-city" class="form-label">City <span class="required" aria-hidden="true">*</span></label>
+                    <select id="listing-city" class="form-input" required aria-required="true">
+                      <option value="">Select City</option>
+                      <option value="Kathmandu">Kathmandu</option>
+                      <option value="Lalitpur">Lalitpur</option>
+                      <option value="Bhaktapur">Bhaktapur</option>
+                      <option value="Pokhara">Pokhara</option>
+                      <option value="Chitwan">Chitwan</option>
+                    </select>
+                    <span class="form-error" id="listing-city-error" role="alert"></span>
+                  </div>
+                  <div class="form-group">
+                    <label for="listing-rent" class="form-label">Rent (NPR/mo) <span class="required" aria-hidden="true">*</span></label>
+                    <input type="number" id="listing-rent" class="form-input" placeholder="e.g. 12000" min="1" required aria-required="true">
+                    <span class="form-error" id="listing-rent-error" role="alert"></span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="listing-image" class="form-label">Image URL <span class="required" aria-hidden="true">*</span></label>
+                  <input type="url" id="listing-image" class="form-input" placeholder="https://example.com/room.jpg" required aria-required="true">
+                  <span class="form-error" id="listing-image-error" role="alert"></span>
+                  <!-- Image Preview -->
+                  <div class="image-preview" id="add-image-preview" hidden>
+                    <img src="" alt="Image preview" id="add-image-preview-img">
+                    <span class="image-preview-label">Preview</span>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="listing-features" class="form-label">Features</label>
+                  <input type="text" id="listing-features" class="form-input" placeholder="e.g. WiFi, Parking, Furnished (comma-separated)">
+                </div>
+                <div class="form-group">
+                  <label for="listing-description" class="form-label">Description <span class="required" aria-hidden="true">*</span></label>
+                  <textarea id="listing-description" class="form-input form-textarea" placeholder="Describe the room or flat..." required aria-required="true" rows="3"></textarea>
+                  <span class="form-error" id="listing-description-error" role="alert"></span>
+                </div>
+                <div class="form-actions">
+                  <button type="submit" class="btn btn-primary btn-block" id="listing-submit-btn">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                    Add Listing
+                  </button>
+                </div>
+              </form>
+            </div>
+
+            <!-- RIGHT: Table Panel -->
+            <div class="dashboard-table-panel">
+              <h3>
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+                Manage Listings
+                <span class="listing-count-badge" id="listing-count-badge">0</span>
+              </h3>
+
+              <!-- Admin Search / Filter / Sort Controls -->
+              <div class="admin-controls" id="admin-controls">
+                <div class="admin-search-wrapper">
+                  <svg class="admin-search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+                  <input type="search" id="admin-search-input" class="admin-search-field" placeholder="Search listings..." aria-label="Search admin listings" autocomplete="off">
+                </div>
+                <div class="admin-filter-group">
+                  <label for="admin-city-filter" class="sr-only">Filter by city</label>
+                  <select id="admin-city-filter" class="admin-select" aria-label="Filter admin listings by city">
+                    <option value="">All Cities</option>
+                    <option value="Kathmandu">Kathmandu</option>
+                    <option value="Lalitpur">Lalitpur</option>
+                    <option value="Bhaktapur">Bhaktapur</option>
+                    <option value="Pokhara">Pokhara</option>
+                    <option value="Chitwan">Chitwan</option>
+                  </select>
+                </div>
+                <div class="admin-filter-group">
+                  <label for="admin-sort" class="sr-only">Sort listings</label>
+                  <select id="admin-sort" class="admin-select" aria-label="Sort admin listings">
+                    <option value="newest">Newest First</option>
+                    <option value="oldest">Oldest First</option>
+                    <option value="rent-low">Rent: Low → High</option>
+                    <option value="rent-high">Rent: High → Low</option>
+                    <option value="title-az">Title: A → Z</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Table (desktop / tablet) -->
+              <div class="table-responsive">
+                <table class="admin-table" id="admin-table" aria-label="Listings management table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Image</th>
+                      <th scope="col">Title</th>
+                      <th scope="col">City</th>
+                      <th scope="col">Rent</th>
+                      <th scope="col">Status</th>
+                      <th scope="col">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="admin-table-body">
+                    <!-- Rendered dynamically -->
+                  </tbody>
+                </table>
+              </div>
+              <p class="table-empty" id="table-empty" hidden>
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                <span>No listings match your filters. Try adjusting your search.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- PANEL 2: User Inquiries -->
+        <div class="dashboard-panel" id="panel-inquiries" role="tabpanel" aria-labelledby="tab-inquiries" hidden>
+          <div class="dashboard-inquiries-panel">
+            <h3>
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Customer Messages &amp; Inquiries
+            </h3>
+            <div class="table-responsive">
+              <table class="admin-table" id="inquiries-table" aria-label="Customer inquiries table">
+                <thead>
+                  <tr>
+                    <th scope="col" style="width: 150px;">Date/Time</th>
+                    <th scope="col" style="width: 150px;">Name</th>
+                    <th scope="col" style="width: 200px;">Email</th>
+                    <th scope="col">Message</th>
+                    <th scope="col" style="width: 150px;">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inquiries-table-body">
+                  <!-- Rendered dynamically by script.js -->
+                </tbody>
+              </table>
+            </div>
+            <p class="table-empty" id="inquiries-empty" hidden>
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <span>No customer inquiries found.</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       EDIT LISTING MODAL
+  ============================================ -->
+  <div class="modal-overlay modal-overlay--top" id="edit-modal" role="dialog" aria-modal="true" aria-labelledby="edit-modal-title" hidden>
+    <div class="modal-content modal-edit">
+      <button class="modal-close" id="edit-modal-close" aria-label="Close edit modal">&times;</button>
+      <div class="modal-header">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="modal-icon" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        <h2 id="edit-modal-title">Edit Listing</h2>
+        <p>Update the listing details below</p>
+      </div>
+      <form class="edit-form" id="edit-form" novalidate>
+        <input type="hidden" id="edit-room-id" value="">
+        <div class="form-group">
+          <label for="edit-title" class="form-label">Title <span class="required" aria-hidden="true">*</span></label>
+          <input type="text" id="edit-title" class="form-input" required aria-required="true" minlength="5">
+          <span class="form-error" id="edit-title-error" role="alert"></span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edit-city" class="form-label">City <span class="required" aria-hidden="true">*</span></label>
+            <select id="edit-city" class="form-input" required aria-required="true">
+              <option value="">Select City</option>
+              <option value="Kathmandu">Kathmandu</option>
+              <option value="Lalitpur">Lalitpur</option>
+              <option value="Bhaktapur">Bhaktapur</option>
+              <option value="Pokhara">Pokhara</option>
+              <option value="Chitwan">Chitwan</option>
+            </select>
+            <span class="form-error" id="edit-city-error" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label for="edit-rent" class="form-label">Rent (NPR/mo) <span class="required" aria-hidden="true">*</span></label>
+            <input type="number" id="edit-rent" class="form-input" min="1" required aria-required="true">
+            <span class="form-error" id="edit-rent-error" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-image" class="form-label">Image URL <span class="required" aria-hidden="true">*</span></label>
+          <input type="url" id="edit-image" class="form-input" required aria-required="true">
+          <span class="form-error" id="edit-image-error" role="alert"></span>
+          <div class="image-preview" id="edit-image-preview" hidden>
+            <img src="" alt="Image preview" id="edit-image-preview-img">
+            <span class="image-preview-label">Preview</span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="edit-features" class="form-label">Features</label>
+          <input type="text" id="edit-features" class="form-input" placeholder="Comma-separated features">
+        </div>
+        <div class="form-group">
+          <label for="edit-description" class="form-label">Description <span class="required" aria-hidden="true">*</span></label>
+          <textarea id="edit-description" class="form-input form-textarea" required aria-required="true" rows="3"></textarea>
+          <span class="form-error" id="edit-description-error" role="alert"></span>
+        </div>
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary" id="edit-submit-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            Save Changes
+          </button>
+          <button type="button" class="btn btn-outline" id="edit-cancel-btn">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ============================================
+       DELETE CONFIRMATION MODAL
+  ============================================ -->
+  <div class="modal-overlay modal-overlay--top" id="delete-modal" role="alertdialog" aria-modal="true" aria-labelledby="delete-modal-title" aria-describedby="delete-modal-desc" hidden>
+    <div class="modal-content modal-confirm">
+      <div class="confirm-icon">
+        <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+      </div>
+      <h3 id="delete-modal-title">Delete Listing</h3>
+      <p id="delete-modal-desc">Are you sure you want to delete <strong id="delete-room-name"></strong>? This action cannot be undone.</p>
+      <div class="confirm-actions">
+        <button class="btn btn-outline" id="delete-cancel-btn">Cancel</button>
+        <button class="btn btn-danger-solid" id="delete-confirm-btn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 6 5 6 21 6"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+          Delete
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================
+       TOAST NOTIFICATION
+  ============================================ -->
+  <div class="toast-container" id="toast-container" aria-live="assertive" aria-atomic="true"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
